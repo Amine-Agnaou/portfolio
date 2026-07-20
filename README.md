@@ -1,2 +1,5 @@
 # portfolio
-Personal portfolio site — RPA/process automation, dta, and IS project work.
+
+Personal portfolio site — RPA/process automation, data, and IS project work.
+
+Live at: https://amine-agnaou.github.io/portfolio/
