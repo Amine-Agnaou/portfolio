@@ -1,0 +1,660 @@
+<title>Amine Agnaou — Portfolio</title>
+<meta name="description" content="Amine Agnaou — HR process automation (RPA) at Orange, MSc Information Systems at IMT Business School, Power BI / SQL / Python. Available from September 2026.">
+<style>
+  :root {
+    --paper: #F4F5F7;
+    --paper-raised: #FFFFFF;
+    --paper-sunken: #ECEEF2;
+    --ink: #161A22;
+    --ink-soft: #565F6E;
+    --line: #DADEE5;
+    --accent: #24408E;
+    --accent-soft: #E4E9F5;
+    --accent-ink: #FFFFFF;
+
+    --serif: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --mono: 'SF Mono', 'Berkeley Mono', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12141A;
+      --paper-raised: #1A1D25;
+      --paper-sunken: #20232C;
+      --ink: #E9EBF1;
+      --ink-soft: #9AA2B1;
+      --line: #2A2E38;
+      --accent: #85A0E8;
+      --accent-soft: #232B45;
+      --accent-ink: #0F1320;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #12141A;
+    --paper-raised: #1A1D25;
+    --paper-sunken: #20232C;
+    --ink: #E9EBF1;
+    --ink-soft: #9AA2B1;
+    --line: #2A2E38;
+    --accent: #85A0E8;
+    --accent-soft: #232B45;
+    --accent-ink: #0F1320;
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --paper: #F4F5F7;
+    --paper-raised: #FFFFFF;
+    --paper-sunken: #ECEEF2;
+    --ink: #161A22;
+    --ink-soft: #565F6E;
+    --line: #DADEE5;
+    --accent: #24408E;
+    --accent-soft: #E4E9F5;
+    --accent-ink: #FFFFFF;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background .25s ease, color .25s ease;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 64px;
+  }
+  .wordmark {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .wordmark b { color: var(--accent); }
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+  }
+  nav.primary-nav a {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    text-decoration: none;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  nav.primary-nav a:hover { color: var(--ink); border-color: var(--accent); }
+
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: border-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  .theme-toggle:active { transform: scale(0.94); }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4rem); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--ink-soft);
+    margin: 0 0 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .status-dot { animation: pulse 2.4s ease-in-out infinite; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 4vw + 1rem, 4.1rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--ink-soft);
+    max-width: 40ch;
+    margin: 1rem 0 2.25rem;
+  }
+
+  dl.record {
+    display: grid;
+    grid-template-columns: minmax(0, 160px) 1fr;
+    row-gap: 0.65rem;
+    column-gap: 1.5rem;
+    max-width: 640px;
+    margin: 0 0 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .record-row {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+  }
+  dl.record dt {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-soft);
+    padding-top: 0.15rem;
+  }
+  dl.record dd {
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero .eyebrow, .hero h1, .hero .tagline, .record-row, .hero-actions {
+      opacity: 0;
+      transform: translateY(6px);
+      animation: revealUp .55s cubic-bezier(.2,.7,.3,1) forwards;
+    }
+    .hero .eyebrow  { animation-delay: .05s; }
+    .hero h1        { animation-delay: .15s; }
+    .hero .tagline  { animation-delay: .28s; }
+    .record-row:nth-child(1) { animation-delay: .40s; }
+    .record-row:nth-child(2) { animation-delay: .52s; }
+    .record-row:nth-child(3) { animation-delay: .64s; }
+    .record-row:nth-child(4) { animation-delay: .76s; }
+    .hero-actions   { animation-delay: .88s; }
+  }
+  @keyframes revealUp { to { opacity: 1; transform: none; } }
+
+  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 0.65rem 1.05rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: color-mix(in srgb, var(--accent) 88%, black); }
+  .btn-ghost { border-color: var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- sections ---------- */
+  .section { padding: clamp(2.75rem, 6vw, 4.25rem) 0; border-top: 1px solid var(--line); }
+
+  .section h2 {
+    font-size: 1.05rem;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+
+  #about p {
+    max-width: 62ch;
+    font-size: 1.08rem;
+  }
+  #about p + p { margin-top: 1.1rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+  }
+
+  /* ---------- skills / flags ---------- */
+  ul.flags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  ul.flags li {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    background: var(--paper-sunken);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--ink);
+    transition: border-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  ul.flags li:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* ---------- background / log ---------- */
+  ol.log {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  ol.log li {
+    display: grid;
+    grid-template-columns: minmax(0, 96px) 1fr;
+    gap: 1.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  ol.log li:last-child { border-bottom: none; padding-bottom: 0; }
+  .log-date {
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    color: var(--accent);
+    padding-top: 0.2rem;
+  }
+  .log-body h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.4rem;
+  }
+  .log-body p {
+    margin: 0;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    font-size: 0.98rem;
+  }
+
+  /* ---------- certifications & academic ---------- */
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+  }
+  .cred-heading {
+    font-size: 0.95rem;
+    font-family: var(--serif);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .cred-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .cred-list li {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .cred-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 3px;
+    padding: 0.15rem 0.45rem;
+    margin-right: 0.6rem;
+    vertical-align: middle;
+  }
+
+  /* ---------- projects ---------- */
+  .project-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1.5rem 1.6rem;
+    max-width: 640px;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 24px -16px color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+  .project-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .project-card p { margin: 0 0 1rem; color: var(--ink-soft); font-size: 0.98rem; }
+  .project-tags { display: flex; gap: 0.5rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
+  .project-tags span {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    background: var(--paper-sunken);
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+  }
+  .project-card a.repo-link {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+  }
+  .project-card a.repo-link:hover { border-color: var(--accent); }
+
+  .note {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 1.25rem;
+  }
+
+  /* ---------- contact ---------- */
+  #contact p { max-width: 46ch; color: var(--ink-soft); margin-bottom: 1.5rem; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 1.75rem 0 2.5rem;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 640px) {
+    nav.primary-nav { display: none; }
+    dl.record { grid-template-columns: 1fr; row-gap: 0.9rem; }
+    .record-row { grid-template-columns: 1fr; row-gap: 0.15rem; }
+    ol.log li { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="wordmark">AMINE<b>·</b>AGNAOU</a>
+    <nav class="primary-nav" aria-label="Section navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">◐</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Paris, France — open to data and IS roles from Sept 2026</p>
+    <h1>Amine Agnaou</h1>
+    <p class="tagline">Automates HR processes at Orange. Builds the data skills to go further.</p>
+
+    <dl class="record" aria-label="Profile summary">
+      <div class="record-row"><dt>role</dt><dd>Project Officer, HR Process Automation (RPA) — Orange</dd></div>
+      <div class="record-row"><dt>education</dt><dd>MSc Information Systems — IMT Business School</dd></div>
+      <div class="record-row"><dt>toolkit</dt><dd>Power BI, SQL, Python, R, BPMN</dd></div>
+      <div class="record-row"><dt>status</dt><dd>Available from September 2026</dd></div>
+    </dl>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/amine-agnaou-fin/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/Amine-Agnaou/CS" target="_blank" rel="noopener">See CS50 project ↗</a>
+    </div>
+  </section>
+
+  <section id="about" class="section reveal">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>I work on RPA and HR process automation at Orange's HR service centers (Direction des Centres de Services RH) — mapping processes, running process-mining analysis, defining KPIs, and building the feasibility and ROI case for automation projects. Alongside that, I'm finishing an MSc in Information Systems Management at IMT Business School.</p>
+      <p>Before Orange, I freelanced as a data analyst — Power BI dashboards and Python/Excel data cleaning for sales and finance clients — and interned as an assistant project manager on IS implementation projects. I'm now working through Harvard's CS50: Data Science with Python to round out the technical side.</p>
+    </div>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <div class="wrap">
+      <h2>Currently building</h2>
+      <ul class="flags">
+        <li>--python</li>
+        <li>--sql</li>
+        <li>--power-bi</li>
+        <li>--r</li>
+        <li>--bpmn</li>
+        <li>--rpa</li>
+        <li>--agile-scrum</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience" class="section reveal">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <ol class="log">
+        <li>
+          <span class="log-date">09/2025 – 10/2026</span>
+          <div class="log-body">
+            <h3>Project Officer, HR Process Automation (RPA) — Orange</h3>
+            <p>Apprenticeship, Direction des Centres de Services RH. Map and analyze HR processes (onboarding, payroll, admin), run process-mining analysis, define KPIs, and build feasibility/ROI cases for RPA projects through testing and deployment.</p>
+          </div>
+        </li>
+        <li>
+          <span class="log-date">01/2024 – 01/2025</span>
+          <div class="log-body">
+            <h3>Data Analyst — Freelance</h3>
+            <p>Built Power BI dashboards tracking sales and finance indicators for clients, cleaned and structured data in Excel and Python, and translated client needs into reporting that supported real decisions.</p>
+          </div>
+        </li>
+        <li>
+          <span class="log-date">06/2024 – 08/2024</span>
+          <div class="log-body">
+            <h3>Assistant Project Manager, IS — Cabinet TAGHZOUT Gestion &amp; Conseil</h3>
+            <p>Internship. Gathered user requirements, drafted functional documentation, tracked software-implementation projects, and acted as the link between internal teams and clients.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="credentials" class="section reveal">
+    <div class="wrap">
+      <h2>Certifications &amp; academic work</h2>
+      <div class="cred-grid">
+        <div class="cred-col">
+          <h3 class="cred-heading">Certifications</h3>
+          <ul class="cred-list">
+            <li><span class="cred-tag">In progress</span>Data Science with Python — Harvard University (edX)</li>
+            <li><span class="cred-tag">Completed</span>Data Science Job Simulation — British Airways</li>
+            <li><span class="cred-tag">Completed</span>Investment Banking Job Simulation — J.P. Morgan</li>
+          </ul>
+        </div>
+        <div class="cred-col">
+          <h3 class="cred-heading">Academic &amp; extracurricular</h3>
+          <ul class="cred-list">
+            <li><span class="cred-tag">2026</span>Hackathon — La Nuit des Loups-Garous (FIPA × SODESI)</li>
+            <li><span class="cred-tag">2024</span>Entrepreneurial Challenge — IMT Business School</li>
+            <li><span class="cred-tag">2024</span>Order-process optimization (BPMN) — IMT-BS coursework</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section reveal">
+    <div class="wrap">
+      <h2>Education</h2>
+      <ol class="log">
+        <li>
+          <span class="log-date">2024 – 2026</span>
+          <div class="log-body">
+            <h3>MSc, Management et Ingénierie des Systèmes d'Information</h3>
+            <p>Institut Mines-Télécom Business School. Innovation management, financial decision-making, AI, data science, IS analysis and design, IS project management.</p>
+          </div>
+        </li>
+        <li>
+          <span class="log-date">2023 – 2024</span>
+          <div class="log-body">
+            <h3>Licence, Commerce et Gestion</h3>
+            <p>École Nationale de Commerce et de Gestion. Finance, marketing, corporate strategy, information systems.</p>
+          </div>
+        </li>
+        <li>
+          <span class="log-date">2021 – 2023</span>
+          <div class="log-body">
+            <h3>CPGE, voie ECS</h3>
+            <p>Lycée Reda Slaoui. Preparatory classes for the grandes écoles — mathematics, economics, general culture, languages.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projects" class="section reveal">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>CS50 — Data Science with Python</h3>
+        <p>Coursework from Harvard's CS50: Data Science with Python, working through problem sets to build core data-analysis skills.</p>
+        <div class="project-tags"><span>python</span><span>cs50</span><span>data science</span></div>
+        <a class="repo-link" href="https://github.com/Amine-Agnaou/CS" target="_blank" rel="noopener">github.com/Amine-Agnaou/CS ↗</a>
+      </div>
+      <p class="note">Freelance Power BI / data work is under client NDA — happy to walk through it directly. More public repos landing here as I build them.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Available from September 2026 — open to conversations about data and IS roles, based in Paris or open to relocation.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/amine-agnaou-fin/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="mailto:amineagnaou123@gmail.com">Email</a>
+        <a class="btn btn-ghost" href="https://github.com/Amine-Agnaou" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Amine Agnaou · Paris</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = '© ' + new Date().getFullYear();
+
+  var toggle = document.getElementById('themeToggle');
+  var root = document.documentElement;
+  var stored = null;
+  try { stored = localStorage.getItem('theme'); } catch (e) {}
+  if (stored === 'dark' || stored === 'light') { root.setAttribute('data-theme', stored); }
+
+  function currentTheme() {
+    var attr = root.getAttribute('data-theme');
+    if (attr === 'dark' || attr === 'light') return attr;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  toggle.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in-view'); });
+  }
+</script>
